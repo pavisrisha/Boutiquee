@@ -1,9 +1,13 @@
 package com.niit.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.Dao.CategoryDAO;
 import com.niit.model.Category;
+import com.niit.model.Supplier;
 
 @Controller
 public class CategoryController {
@@ -19,8 +24,18 @@ public class CategoryController {
 	private CategoryDAO categoryDAO;
 
 	@RequestMapping("/admin/Category/newCategory")
-	public String newCategory(@ModelAttribute Category category) {
+	public String newCategory(@Valid @ModelAttribute Category category,BindingResult result,Model model) {
+		if(result.hasErrors())
+			
+		{
+			List<Category> categoryList = categoryDAO.list();
 
+			model.addAttribute("categoryList", categoryList);
+
+			model.addAttribute("isUserClickedCategory", "true");
+		    return "home";
+		}
+		
 		categoryDAO.saveOrUpdate(category);
 		
 		return "redirect:/admin/Category/view";

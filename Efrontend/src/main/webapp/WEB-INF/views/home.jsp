@@ -47,9 +47,7 @@
 			<%@ include file="viewsupplier.jsp"%>
 		</c:when>
 
-		<c:when test="${isUserClickedUser == 'true' }">
-			<%@ include file="User.jsp"%>
-		</c:when>
+	
 		
 		 <c:when test="${isUserClickedAboutus == 'true' }">
 			<%@ include file="Aboutus.jsp"%>

@@ -176,6 +176,20 @@ a{color:inherit;text-decoration:none}
                 <div class="group">
                     <label for="pass" class="label">Password</label>
                     <input id="password" type="password" class="input" data-type="password" name="password">
+                
+               <%--   <c:if test="${not empty error}">
+ --%>
+			<%-- 	<div class="error"><b>${error}</b></div>
+
+	 			</c:if> 
+
+				<c:if test="${not empty logout}">
+
+			<div class="msg"><b>${logout}</b></div>
+
+				</c:if>				
+
+				<b>${message}</b> --%>
                 </div>
                 
                 <div class="group">

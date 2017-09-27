@@ -28,7 +28,7 @@ h1 {
     transition: 0.3s;
     font-family: sans-serif;
     font-weight: 800;
-    font-size: .85em;
+    font-size: .95em;
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
@@ -64,99 +64,256 @@ h1 {
 }
 </style>
 <style>
-body {
-	margin-top: 20px;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,900,700,500,300,100);
+*{
+  margin: 0;
+  box-sizing: border-box;
+
+}
+body{
+  background: #E0E0E0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('');
+  background-repeat: repeat-y;
+  background-size: 100%;
+}
+::selection {background: #f31544; color: #FFF;}
+::moz-selection {background: #f31544; color: #FFF;}
+h1{
+  font-size: 2.5em;
+  color: #222;
+}
+h2{font-size: .9em;}
+h3{
+  font-size:3.2em;
+  font-weight: 300;
+  line-height: 2em;
+}
+p{
+  font-size: .7em;
+  color: #666;
+  line-height: 1.2em;
+}
+
+#invoiceholder{
+  width:100%;
+  hieght: 100%;
+  padding-top: 50px;
+}
+#headerimage{
+  z-index:-1;
+  position:relative;
+  top: -50px;
+  height: 350px;
+ 
+
+
+}
+#invoice{
+  position: relative;
+  top: -290px;
+  margin: 0 auto;
+  width: 700px;
+  background: #FFF;
+}
+
+[id*='invoice-']{ /* Targets all id with 'col-' */
+  border-bottom: 1px solid #EEE;
+  padding: 30px;
+}
+
+#invoice-top{min-height: 120px;}
+#invoice-mid{min-height: 120px;}
+#invoice-bot{ min-height: 250px;}
+
+.logo{
+  float: left;
+	height: 60px;
+	width: 60px;
+	background: url(http://michaeltruong.ca/images/logo1.png) no-repeat;
+	background-size: 60px 60px;
+}
+.clientlogo{
+  float: left;
+	height: 60px;
+	width: 60px;
+	background: url(http://michaeltruong.ca/images/client.jpg) no-repeat;
+	background-size: 60px 60px;
+  border-radius: 50px;
+}
+.info{
+  display: block;
+  float:left;
+  margin-left: 20px;
+}
+.title{
+  float: right;
+}
+.title p{text-align: right;}
+#project{margin-left: 52%;}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+td{
+  padding: 5px 0 5px 15px;
+  border: 1px solid #EEE
+}
+.tabletitle{
+  padding: 5px;
+  background: #EEE;
+}
+.service{border: 1px solid #EEE;}
+.item{width: 50%;}
+.itemtext{font-size: .9em;}
+
+#legalcopy{
+  margin-top: 30px;
+}
+form{
+  float:right;
+  margin-top: 30px;
+  text-align: right;
+}
+
+
+.effect2
+{
+  position: relative;
+}
+.effect2:before, .effect2:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.effect2:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+
+
+.legal{
+  width:70%;
 }
 </style>
 <head>
 <title>Insert title here</title>
 </head>
-
-<h2 style="font-family: magneto; margin-left: 5em;" align="left" >Receipt</h2>
+<h1 style="font-family: magneto; margin-left: 5em;" align="left" >Receipt</h1>
 <body>
+	<div id="invoiceholder">
+  <div id="headerimage"></div>
+  <div id="invoice" class="effect2">
+    
+    <div id="invoice-top">
+      <div class="logo"></div>
+      <div class="info">
+        <h2>Pavithra</h2>
+        <p> Boutique@gmail.com </br>
+            289-335-6503
+        </p>
+      </div><!--End Info-->
+      <div class="title">
+        <h1>Invoice </h1>
+      
+        </p>
+      </div><!--End Title-->
+    </div><!--End InvoiceTop-->
 
 
-	<div class="container">
-		<div class="row">
+    
+    <div id="invoice-mid">
+      
+       <div class="clientlogo"></div>
+      <div class="info">
+         <h2>Custumer Details</h2>
+        <p>${shipping.userName}<br> ${shipping.emailId} <br> ${shipping.contactNumber} </p> 
+        
+          
+      </div> 
 
-		
+      <div id="project">
+        <h2><b>ADDRESS DETAILS</b></h2>
+        <p>${shipping.address}<br> ${shipping.zipcode}</p>
+      </div>   
 
-			<br> <br>
-
-			<div
-				class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
-				<div class="row">
-					<div class="col-xs-6 col-sm-6 col-md-6"><th>ADDRESS DETAILS</th>
-						<address>
-							${shipping.address}<br> ${shipping.zipcode}
-						</address>
-					</div>
-					
-					<%-- <div class="col-xs-6 col-sm-6 col-md-6"><th>Custumer Details</th>
-						<address>
-							${shipping.username}<br> ${shipping.emailid} 
-						</address>
-					</div> --%>
-					<div class="col-xs-6 col-sm-6 col-md-6 text-right"></div>
-				</div>
-				<div class="row">
-					<div class="text-center"></div>
-					</span>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>Product</th>
-								<th class="text-center">Product Price</th>
-								<th class="text-center">Qty</th>
-								<th class="text-center">Total</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items="${i}" var="cartitem" varStatus="status">
-
-								<tr>
-
-									<td>${cartitem.productName}</td>
-
-									<td class="text-center">${cartitem.price}</td>
-
-									<td class="text-center">${cartitem.qty}</td>
-
-									<td class="text-right">${cartitem.total}</td>
-                                    <c:set var="grandTotal" value="${grandtotal + cartitems.total }"></c:set>
-								</tr>
-
-							</c:forEach>
-							<tr>
-								<td> </td>
-								<td> </td>
-								<td class="text-right"><h4>
+    </div><!--End Invoice Mid-->
+    
+    <div id="invoice-bot">
+      
+      <div id="table">
+        <table>
+          <tr class="tabletitle">
+            <td class="item"><h2>Product Name</h2></td>
+            <td class="Hours"><h2>Product Price</h2></td>
+            <td class="Rate"><h2>Qty</h2></td>
+            <td class="subtotal"><h2>Total</h2></td>
+          </tr>
+          <c:forEach items="${i}" var="cartitem" varStatus="status">
+          <tr class="service">
+            <td class="tableitem"><p class="itemtext">${cartitem.productName}</p></td>
+            <td class="tableitem"><p class="itemtext">${cartitem.price}</p></td>
+            <td class="tableitem"><p class="itemtext">${cartitem.qty}</p></td>
+            <td class="tableitem"><p class="itemtext">${cartitem.total}</p></td>
+                       <c:set var="grandTotal" value="${grandtotal + cartitems.total }"></c:set>
+          </tr>
+         
+          </c:forEach>
+            
+          <tr class="tabletitle">
+            <td></td>
+            <td></td>
+           
+          
+           <td class="text-right"><h4>
 										<strong>Grand Total: </strong>
 									</h4></td>
 								<td class="text-center text-danger"><h4>
 										<strong>${GrandTotal}</strong>
 									</h4></td> 
-							</tr>
-							
-						</tbody>
-					</table>
+								
+                   
+           
+          </tr>
+          </tbody>
+        </table>
+      </div><!--End Table-->
+      	
+  
 					<c:url value="/Thanku" var="abc"></c:url>
-					<a href="${abc}" class="btn teal block circular">Clickhere</a>
-					<%--  <a href="${abc}" class="btn btn-success btn-lg btn-block">Clickhere <span class="glyphicon glyphicon-chevron-right"></span>
- --%>
-                </a>
-					<div>
-					<div class="wrapper">
+					<center><a href="${abc}" class="btn teal block circular">Clickhere</a></center>
+      
+      <div id="legalcopy">
+        <p class="legal"><strong>Thank you for your business!</strong>  Payment is expected within 31 days; please process this invoice within that time. There will be a 5% interest charge per month on late invoices. 
+        </p>
+      </div>
+      
+    </div><!--End InvoiceBot-->
+  </div><!--End Invoice-->
+</div><!-- End Invoice Holder-->
 
-  
-  
-  
-</div>
-
-					
-					</div>
-				</div>
-			</div>
-		</div>
 </body>
 </html>

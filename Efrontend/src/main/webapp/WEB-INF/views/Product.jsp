@@ -44,6 +44,7 @@
 				<div class="col-md-4">
 					<form:input path="productName" name="productName"
 						class="form-control" />
+						<form:errors path="productName" cssStyle="color:red"></form:errors>
 				</div>
 			</div>
 			<!-- Select Basic -->
@@ -53,6 +54,7 @@
 				<div class="col-md-4">
 					<form:input path="productDescription" name="productDescription"
 						class="form-control" />
+						<form:errors path="productDescription" cssStyle="color:red"></form:errors>
 				</div>
 			</div>
 			<!-- Select Basic -->
@@ -60,6 +62,7 @@
 				<label class="col-md-4 control-label" for="product_name">STOCK</label>
 				<div class="col-md-4">
 					<form:input path="stock" name="stock" class="form-control" />
+					<form:errors path="stock" cssStyle="color:red"></form:errors>
 				</div>
 			</div>
 			<!-- Select Basic -->
@@ -67,6 +70,7 @@
 				<label class="col-md-4 control-label" for="product_name_fr">PRICE</label>
 				<div class="col-md-4">
 					<form:input path="price" name="price" class="form-control" />
+					<form:errors path="price" cssStyle="color:red"></form:errors>
 				</div>
 			</div>
 			<div class="form-group">
@@ -75,6 +79,7 @@
 				<div class="col-xs-6">
 
 					<select name="category" id="category" class="form-control">
+					
 
 						<option value="" class="form-control">Select Category</option>
 

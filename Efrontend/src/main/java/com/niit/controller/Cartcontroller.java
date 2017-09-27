@@ -183,13 +183,8 @@ public class Cartcontroller {
 
 	}
 
-	/*@RequestMapping("/cart/removecartList/{cartListid}")
+	
 
-	public String removecartList(@PathVariable int cartListid,Model model) {
-		cartDAO.removecartList(cartListid);
-		return "redirect:/cart/myCart";
-
-	}*/
-
+	
 
 }

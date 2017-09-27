@@ -32,6 +32,7 @@
 			
 			<div class="col-md-4">
 						<form:input path="supplierId"  type="hidden"  name="supplierId" class="form-control" />
+						
 					</div>
 					
 					</div>
@@ -46,6 +47,7 @@
 
 					<form:input path="supplierName" name="supplierName"
 						class="form-control" />
+						<form:errors path="supplierName" cssStyle="color:red"></form:errors>
 </div>
 </div>
 					<div class="form-group">
@@ -55,6 +57,8 @@
 						<div class="col-md-4">
 							<form:input path="contactNumber" name="contactNumber"
 								class="form-control" />
+								<form:errors path="contactNumber" cssStyle="color:red"></form:errors>
+						
 </div>
 </div>
 							<!-- Button -->

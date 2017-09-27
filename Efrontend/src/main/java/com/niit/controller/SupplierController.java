@@ -2,15 +2,19 @@ package com.niit.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.Dao.SupplierDAO;
+import com.niit.model.Category;
 import com.niit.model.Supplier;
 
 @Controller
@@ -20,7 +24,16 @@ public class SupplierController {
 	private SupplierDAO supplierDAO;
 
 	@RequestMapping("/admin/supplier/newSupplier")
-	public String newCategory(@ModelAttribute Supplier supplier) {
+	public String newCategory(@Valid @ModelAttribute Supplier supplier,BindingResult result,Model model) {
+		
+if(result.hasErrors())
+			
+		{
+			List<Supplier> supplierList = supplierDAO.list();
+			model.addAttribute("title", "Supplier");
+			model.addAttribute("isUserClickedSupplier", "true");
+		    return "home";
+		}
 		supplierDAO.saveOrUpdate(supplier);
 		return "redirect:/admin/supplier/view";
 	}

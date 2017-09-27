@@ -115,7 +115,7 @@
 
 </a>
 
-<br><font color="red">Shipping address</font><br><br>
+<br><b><font color="solid red">Shipping address</b></font><br><br>
 
 Name:${shipping.userName}<br>
 

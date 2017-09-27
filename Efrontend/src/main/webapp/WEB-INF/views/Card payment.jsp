@@ -456,8 +456,11 @@ body {
 	
 			
 			<div id="menu2" class="tab-pane fade">
+			
     <c:url value="/order/${shippingid}" var="p" />
-<a href="${p}" class="btn btn-success pull-right">Cash On Delivery</a></right>
+    <br>
+    <br>
+<center><a href="${p}" class="btn btn-success ">Cash On Delivery</a></center>
     </div>
 			
 				

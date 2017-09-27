@@ -98,7 +98,10 @@ public class Cardcontroller {
 	}
 	@RequestMapping("/Thanku")
 
-	public String cash(Principal p,Model model) {		
+	public String cash(Principal p,Model model) {	
+		String username = p.getName();
+		List<Cart> cartList = cartDAO.getByEmailId(username);
+		cartDAO.deleteall(cartList);
 		model.addAttribute("isUserClickedThanku", true);
 		return "home";
 

@@ -5,9 +5,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,8 +38,22 @@ public class ProductController {
 	private SupplierDAO supplierDAO;
 
 	@RequestMapping("/admin/product/newProduct")
-	public String newCategory(@ModelAttribute Product product, @RequestParam("image") MultipartFile filedet,
-			Model model) {
+	public String newCategory(@Valid @ModelAttribute Product product,BindingResult result, @RequestParam("image") MultipartFile filedet,Model model) {
+		
+		if(result.hasErrors())
+		{
+			List<Category> categoryList = categoryDAO.list();
+
+			List<Supplier> supplierList = supplierDAO.list();
+			model.addAttribute("supplierList", supplierList);
+
+			model.addAttribute("categoryList", categoryList);
+
+			model.addAttribute("isUserClickedProduct", "true");
+		return "home";
+		}
+		
+	
 		System.out.println("product Desc" + product.getProductDescription());
 		String path = "C:\\project\\eclipse-workspace\\Efrontend\\src\\main\\webapp\\WEB-INF\\resources\\images\\";
 		System.out.println(path);
@@ -64,6 +81,7 @@ public class ProductController {
 		}
 
 		System.out.println("-------Image insert Success------");
+		
 
 		return "redirect:/admin/product/view";
 

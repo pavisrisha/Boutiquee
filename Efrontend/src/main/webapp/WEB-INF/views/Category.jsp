@@ -29,17 +29,19 @@
 
 			
 			<!-- Select Basic -->
-			<%-- <div class="form-group">
+			 <div class="form-group">
 				
 					<div class="col-md-4">
 						<form:input path="categoryId"  type="hidden"  name="categoryId" class="form-control" />
-					</div> --%>
+					</div> 
 				
 			</div>
 <div class="form-group">
+
 			<label class="col-md-4 control-label" for="category_name">CATEGORY NAME</label>
 			<div class="col-md-4">
 				<form:input path="categoryName"  type="text"  name="categoryName" class="form-control" />
+				<form:errors path="categoryName" cssStyle="color:red"></form:errors>
 			</div>
 </div>
 
@@ -48,6 +50,7 @@
 				<label class="col-md-4 control-label" for="category_name_fr">CATEGORY DESCRIPTION</label>
 				<div class="col-md-4">
 					<form:input path="categoryDescription"  type="text" name="categoryDescription"	class="form-control" />
+					<form:errors path="categoryDescription" cssStyle="color:red"></form:errors>
 				</div>
 			</div>
 			<!-- Button -->

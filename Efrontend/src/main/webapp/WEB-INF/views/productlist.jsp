@@ -50,9 +50,9 @@
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.9em;
+  font-size: 1.4em;
   opacity: 0;
-  background-color: #409ad5;
+  background-color: solid red;
   -webkit-transform: rotateX(-90deg);
   transform: rotateX(-90deg);
   -webkit-transform-origin: 100% 0;

@@ -15,11 +15,11 @@ function formRegister() {
 
 	var userName = document.getElementById('userName');
 
-	/* var userName = document.getElementById('userName'); */
+	
 
     var password = document.getElementById('password');
 	
-	var password_confirmation = document.getElementById('password_confirmation');
+	/* var password_confirmation = document.getElementById('password_confirmation'); */
 	
 	var contactNumber = document.getElementById('contactNumber');
 
@@ -28,7 +28,7 @@ function formRegister() {
 	var address = document.getElementById('address');
 
 	var zipcode = document.getElementById('zipcode');
-	var str1=document.getElementById("password").value;
+/* 	var str1=document.getElementById("password").value;
 
 	var str2=document.getElementById("password_confirmation").value;
 
@@ -40,7 +40,7 @@ function formRegister() {
 
 	}
 
-	return true;
+	return true; */
 
 	// Check each input in the order that it appears in the form!
 
@@ -200,7 +200,7 @@ function isAlphabet(elem, helperMsg) {
 
 }
 
-function isAlphanumeric(elem, helperMsg) {
+function isAlphabet(elem, helperMsg) {
 
 	var alphaExp = /^[0-9a-zA-Z\.\-]+$/;
 
@@ -463,8 +463,7 @@ a {
 
 
 					<div class="form-group">
-						<input type="text" name="emailId" id="emailId"
-							class="form-control input-sm" placeholder="emailId">
+	<input type="text" name="emailId" id="emailId" class="form-control input-sm" placeholder="emailId">
 					</div>
 					
 
@@ -474,25 +473,22 @@ a {
 					</div>
 
 
-					<div class="row">
-						<div class="col-xs-6 col-sm-6 col-md-6">
+					
+						
 							<div class="form-group">
-								<input type="password" name="password" id="password"
-									class="form-control input-sm" placeholder="password">
+	<input type="password" name="password" id="password" class="form-control input-sm" placeholder="password">
 							</div>
-						</div>
-						<div class="col-xs-6 col-sm-6 col-md-6">
+						
+						<!-- <div class="col-xs-6 col-sm-6 col-md-6">
 							<div class="form-group">
 								<input type="password" name="password_confirmation"
 									id="password_confirmation" class="form-control input-sm"
 									placeholder="Confirm Password">
 							</div>
-						</div>
-					</div>
-
+						</div> -->
+					
 					<div class="form-group">
-						<input type="text" name="contactNumber" id="contactNumber"
-							class="form-control input-sm" placeholder="contactNumber">
+	<input type="text" name="contactNumber" id="contactNumber" class="form-control input-sm" placeholder="contactNumber">
 					</div>
 
 					<div class="form-group">
@@ -501,8 +497,7 @@ a {
 					</div>
 
 					<div class="form-group">
-						<input type="text" name="zipcode" id="zipcode"
-							class="form-control input-sm" placeholder="zipcode">
+<input type="text" name="zipcode" id="zipcode" class="form-control input-sm" placeholder="zipcode">
 					</div>
 					<input type="submit" value="Register"
 					
