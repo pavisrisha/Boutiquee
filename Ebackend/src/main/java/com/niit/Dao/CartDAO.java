@@ -49,5 +49,7 @@ public interface CartDAO {
 
 
 	public void updateshipping(String emailId, int shippingId);
+	
+	public void deleteall(List<Cart> cartitems);
 
 	}

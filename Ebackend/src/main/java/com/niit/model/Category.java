@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Table(name = "category")
@@ -14,9 +15,9 @@ public class Category {
 	@Id
 	@GeneratedValue
 	private int categoryId;
-	
+	@NotEmpty(message="categoryName should not be empty")
 	private String categoryName;
-	
+	@NotEmpty(message="categoryDescription should not be empty")
 	private String categoryDescription;
 	
 	

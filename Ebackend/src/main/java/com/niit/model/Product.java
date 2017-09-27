@@ -6,7 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,17 +22,19 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int productId;
+	@NotEmpty(message = "Product name should not be empty")
 
+	@Pattern(regexp = "[a-zA-Z]*", message = "the name can only contain letters")
 	private String productName;
-
+	@NotEmpty(message="Description should not be empty")
 	private String productDescription;
-
+	@NotNull(message="Stock should not be empty")
 	private int stock;
-
+	@Min(value=50)
 	private int price;
-
+	@NotEmpty(message="Category should not be empty")
 	private String category;
-
+	@NotEmpty(message="supplier should not be empty")
 	private String supplierName;
 
 	@Transient

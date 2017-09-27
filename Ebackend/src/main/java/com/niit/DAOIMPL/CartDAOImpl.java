@@ -5,7 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 
 import org.hibernate.Query;
-
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -214,5 +214,16 @@ public class CartDAOImpl implements CartDAO {
 		sessionFactory.getCurrentSession().createQuery(hql);
 
 	}
+	
+	@Transactional
+
+	public void deleteall(List<Cart> cartitems) {
+		for(Cart cart:cartitems)
+			sessionFactory.getCurrentSession().delete(cart);
+		
+	}
+	
+
+	
 
 }
